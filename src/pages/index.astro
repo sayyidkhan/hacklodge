@@ -1,0 +1,323 @@
+---
+import "../styles/global.css";
+
+const services = [
+  {
+    title: "Sleep Zones",
+    text: "Quiet rest areas with mats, foldable beds, blankets, eye masks, and ear plugs.",
+    tone: "purple",
+    icon: "M4 16h16M5 16v-4a3 3 0 0 1 3-3h8a4 4 0 0 1 4 4v3M6 9V5h8a3 3 0 0 1 3 3v1M6 16v3M18 16v3",
+  },
+  {
+    title: "Charging Stations",
+    text: "Fast chargers, USB-C power, monitored device zones, and reliable power strips.",
+    tone: "cyan",
+    icon: "M13 2 5 14h6l-2 8 10-14h-6l2-6Z",
+  },
+  {
+    title: "Lockers",
+    text: "Secure backpack and equipment storage with QR-based check-in and check-out.",
+    tone: "green",
+    icon: "M7 10V8a5 5 0 0 1 10 0v2M6 10h12v10H6V10Zm6 4v3",
+  },
+  {
+    title: "Recovery Areas",
+    text: "Beanbags, water, snacks, and stretching zones to reduce fatigue across the event.",
+    tone: "amber",
+    icon: "M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5 6.8 15M17.2 9l2.6-1.5M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z",
+  },
+  {
+    title: "Gear Rentals",
+    text: "Monitors, keyboards, mice, stands, power banks, and extension cords on demand.",
+    tone: "purple",
+    icon: "M4 6h16v10H4V6Zm3 13h10M9 16v3M15 16v3M8 10h3M13 10h3M8 13h8",
+  },
+];
+
+const organizerBenefits = [
+  "Better participant experience",
+  "Reduced fatigue during overnight builds",
+  "Higher productivity through the final stretch",
+  "New sponsorship surfaces for partners",
+  "Easy setup inside existing venues",
+];
+
+const participantBenefits = [
+  "Finding a place to sleep",
+  "Carrying extra gear all weekend",
+  "Keeping every device charged",
+  "Protecting bags and equipment",
+];
+
+const plans = [
+  {
+    name: "Starter",
+    summary: "Essentials for venues that need a safe rest baseline.",
+    tone: "purple",
+    items: ["Sleep Zone"],
+  },
+  {
+    name: "Growth",
+    summary: "Power, rest, and security in one operating package.",
+    tone: "cyan",
+    items: ["Sleep Zone", "Charging Stations", "Lockers"],
+  },
+  {
+    name: "Premium",
+    summary: "The full HackLodge setup for flagship hackathons.",
+    tone: "green",
+    items: ["Sleep Zone", "Charging Stations", "Lockers", "Recovery Areas", "Gear Rentals"],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HackLodge provides sleep, charging, locker, recovery, and gear rental infrastructure for 24-72 hour hackathons."
+    />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>HackLodge | Sleep. Recharge. Ship.</title>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="HackLodge home">
+        <img src="/logo.png" alt="" />
+        <span>Hack<span>Lodge</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+      <a class="nav-cta" href="#waitlist">Join Waitlist</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="/hacklodge-venue.png" alt="" />
+        </div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-title">Sleep. Recharge. Ship<span>.</span></h1>
+            <p>Builder infrastructure designed for 24-72 hour hackathons.</p>
+            <div class="hero-actions" aria-label="Primary calls to action">
+              <a class="button primary" href="#waitlist">Join Waitlist</a>
+              <a class="button secondary" href="mailto:hello@hacklodge.com">Talk To Us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem section-light" id="problem" aria-labelledby="problem-title">
+        <div class="section-grid">
+          <div class="section-copy">
+            <h2 id="problem-title">Hackathons Were Built For Building, Not Sleeping</h2>
+            <p>
+              Participants run hard for 24-72 hours, but venues rarely provide the physical
+              infrastructure needed to keep builders healthy, focused, and productive.
+            </p>
+            <div class="problem-list" role="list">
+              <div role="listitem">
+                <strong>Participants sleep on floors</strong>
+                <span>Rest becomes improvised instead of planned.</span>
+              </div>
+              <div role="listitem">
+                <strong>Devices run out of power</strong>
+                <span>Teams lose momentum hunting for outlets.</span>
+              </div>
+              <div role="listitem">
+                <strong>Bags remain unsecured</strong>
+                <span>Laptops, gear, and backpacks sit unattended.</span>
+              </div>
+              <div role="listitem">
+                <strong>Recovery facilities are limited</strong>
+                <span>Fatigue compounds before demos begin.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floorplan" aria-label="Illustration of a HackLodge venue floorplan">
+            <div class="plan-header">
+              <span>Venue Layout</span>
+              <span>24-72h Ops</span>
+            </div>
+            <div class="plan-grid">
+              <div class="zone zone-sleep">Sleep Zone</div>
+              <div class="zone zone-charge">Charging Rail</div>
+              <div class="zone zone-lockers">Lockers</div>
+              <div class="zone zone-recovery">Recovery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution" id="solution" aria-labelledby="solution-title">
+        <div class="section-heading center">
+          <h2 id="solution-title">Everything Builders Need In One Place</h2>
+          <p>HackLodge transforms unused venue space into a repeatable operations layer.</p>
+        </div>
+
+        <div class="service-grid">
+          {
+            services.map((service) => (
+              <article class={`service-card tone-${service.tone}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={service.icon} />
+                </svg>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="benefits section-light" id="organizers" aria-label="HackLodge benefits">
+        <div class="benefit-panel organizer-panel">
+          <div>
+            <h2>Why Organizers Choose HackLodge</h2>
+            <p>
+              Add high-value participant infrastructure without turning your organizing team
+              into a hotel, storage desk, and hardware rental operator.
+            </p>
+          </div>
+          <ul class="check-list">
+            {organizerBenefits.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="benefit-panel participant-panel">
+          <div>
+            <h2>Focus On Building</h2>
+            <p>Participants stay close to the venue, their team, and their project.</p>
+          </div>
+          <div>
+            <span class="worry-label">Do not worry about:</span>
+            <ul class="x-list">
+              {participantBenefits.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="packages" aria-labelledby="packages-title">
+        <div class="section-heading center">
+          <h2 id="packages-title">Choose Your Setup</h2>
+          <p>Start with rest, then layer power, security, recovery, and gear as the event scales.</p>
+        </div>
+        <div class="package-grid">
+          {
+            plans.map((plan) => (
+              <article class={`package-card tone-${plan.tone}`}>
+                <div>
+                  <h3>{plan.name}</h3>
+                  <p>{plan.summary}</p>
+                </div>
+                <ul>
+                  {plan.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+                <a href="#waitlist">Talk To Us</a>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="waitlist section-light" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="section-heading center">
+          <h2 id="waitlist-title">Join The Waitlist</h2>
+          <p>Tell us whether you are joining as a participant or exploring HackLodge for an event.</p>
+        </div>
+
+        <div class="form-grid">
+          <form class="waitlist-form" data-form="participants">
+            <h3>For Participants</h3>
+            <label>
+              Name
+              <input name="name" autocomplete="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Country
+              <input name="country" autocomplete="country-name" placeholder="Singapore" required />
+            </label>
+            <label>
+              Number of Hackathons Per Year
+              <select name="hackathons" required>
+                <option value="">Select range</option>
+                <option>1-2</option>
+                <option>3-5</option>
+                <option>6-10</option>
+                <option>10+</option>
+              </select>
+            </label>
+            <button type="submit">Join Waitlist</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+
+          <form class="waitlist-form" data-form="organizers">
+            <h3>For Organizers</h3>
+            <label>
+              Organization
+              <input name="organization" placeholder="Your organization" required />
+            </label>
+            <label>
+              Event Name
+              <input name="event" placeholder="Your event name" required />
+            </label>
+            <label>
+              Expected Attendees
+              <select name="attendees" required>
+                <option value="">Select range</option>
+                <option>Under 100</option>
+                <option>100-300</option>
+                <option>300-750</option>
+                <option>750+</option>
+              </select>
+            </label>
+            <label>
+              Work Email
+              <input name="email" type="email" autocomplete="email" placeholder="you@organization.com" required />
+            </label>
+            <button type="submit">Join Waitlist</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top" aria-label="HackLodge home">
+        <img src="/logo.png" alt="" />
+        <span>Hack<span>Lodge</span></span>
+      </a>
+      <p>Sleep. Recharge. Ship.</p>
+      <a href="mailto:hello@hacklodge.com">hello@hacklodge.com</a>
+    </footer>
+
+    <script>
+      document.querySelectorAll("form[data-form]").forEach((form) => {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const status = form.querySelector(".form-status");
+          if (status) {
+            status.textContent = "Thanks. HackLodge will follow up when pilots open.";
+          }
+          form.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
